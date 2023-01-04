@@ -16,6 +16,7 @@
 		1DDEEF6629659B0B003ACFDF /* YumemiCodeCheckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEEF6529659B0B003ACFDF /* YumemiCodeCheckUITestsLaunchTests.swift */; };
 		1DDEEF732965A85F003ACFDF /* FortuneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEEF722965A85F003ACFDF /* FortuneViewModel.swift */; };
 		1DDEEF752965ABF5003ACFDF /* BloodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEEF742965ABF5003ACFDF /* BloodType.swift */; };
+		1DDEEF772965B6D1003ACFDF /* Fortune.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEEF762965B6D1003ACFDF /* Fortune.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		1DDEEF6529659B0B003ACFDF /* YumemiCodeCheckUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiCodeCheckUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		1DDEEF722965A85F003ACFDF /* FortuneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneViewModel.swift; sourceTree = "<group>"; };
 		1DDEEF742965ABF5003ACFDF /* BloodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodType.swift; sourceTree = "<group>"; };
+		1DDEEF762965B6D1003ACFDF /* Fortune.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fortune.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				1DDEEF4C29659B0B003ACFDF /* Assets.xcassets */,
 				1DDEEF4E29659B0B003ACFDF /* Preview Content */,
 				1DDEEF742965ABF5003ACFDF /* BloodType.swift */,
+				1DDEEF762965B6D1003ACFDF /* Fortune.swift */,
 			);
 			path = YumemiCodeCheck;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DDEEF752965ABF5003ACFDF /* BloodType.swift in Sources */,
+				1DDEEF772965B6D1003ACFDF /* Fortune.swift in Sources */,
 				1DDEEF4B29659B07003ACFDF /* FortuneFormView.swift in Sources */,
 				1DDEEF4929659B07003ACFDF /* YumemiCodeCheckApp.swift in Sources */,
 				1DDEEF732965A85F003ACFDF /* FortuneViewModel.swift in Sources */,

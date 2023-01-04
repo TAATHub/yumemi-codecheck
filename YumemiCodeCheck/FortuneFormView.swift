@@ -28,7 +28,9 @@ struct FortuneFormView<ViewModel: FortuneViewModelProtocol>: View {
             }
 
             Button("占う") {
-                viewModel.onFortuneButtonTapped()
+                Task {
+                    await viewModel.onFortuneButtonTapped()
+                }
             }
         }
     }
