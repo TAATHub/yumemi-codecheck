@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1DDEEF4929659B07003ACFDF /* YumemiCodeCheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEEF4829659B07003ACFDF /* YumemiCodeCheckApp.swift */; };
-		1DDEEF4B29659B07003ACFDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEEF4A29659B07003ACFDF /* ContentView.swift */; };
+		1DDEEF4B29659B07003ACFDF /* FortuneFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEEF4A29659B07003ACFDF /* FortuneFormView.swift */; };
 		1DDEEF4D29659B0B003ACFDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DDEEF4C29659B0B003ACFDF /* Assets.xcassets */; };
 		1DDEEF5029659B0B003ACFDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DDEEF4F29659B0B003ACFDF /* Preview Assets.xcassets */; };
 		1DDEEF5A29659B0B003ACFDF /* YumemiCodeCheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEEF5929659B0B003ACFDF /* YumemiCodeCheckTests.swift */; };
 		1DDEEF6429659B0B003ACFDF /* YumemiCodeCheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEEF6329659B0B003ACFDF /* YumemiCodeCheckUITests.swift */; };
 		1DDEEF6629659B0B003ACFDF /* YumemiCodeCheckUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEEF6529659B0B003ACFDF /* YumemiCodeCheckUITestsLaunchTests.swift */; };
+		1DDEEF732965A85F003ACFDF /* FortuneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEEF722965A85F003ACFDF /* FortuneViewModel.swift */; };
+		1DDEEF752965ABF5003ACFDF /* BloodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEEF742965ABF5003ACFDF /* BloodType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		1DDEEF4529659B07003ACFDF /* YumemiCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YumemiCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DDEEF4829659B07003ACFDF /* YumemiCodeCheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiCodeCheckApp.swift; sourceTree = "<group>"; };
-		1DDEEF4A29659B07003ACFDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1DDEEF4A29659B07003ACFDF /* FortuneFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneFormView.swift; sourceTree = "<group>"; };
 		1DDEEF4C29659B0B003ACFDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1DDEEF4F29659B0B003ACFDF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1DDEEF5529659B0B003ACFDF /* YumemiCodeCheckTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YumemiCodeCheckTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +46,8 @@
 		1DDEEF5F29659B0B003ACFDF /* YumemiCodeCheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YumemiCodeCheckUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DDEEF6329659B0B003ACFDF /* YumemiCodeCheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiCodeCheckUITests.swift; sourceTree = "<group>"; };
 		1DDEEF6529659B0B003ACFDF /* YumemiCodeCheckUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiCodeCheckUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1DDEEF722965A85F003ACFDF /* FortuneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneViewModel.swift; sourceTree = "<group>"; };
+		1DDEEF742965ABF5003ACFDF /* BloodType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BloodType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +99,11 @@
 			isa = PBXGroup;
 			children = (
 				1DDEEF4829659B07003ACFDF /* YumemiCodeCheckApp.swift */,
-				1DDEEF4A29659B07003ACFDF /* ContentView.swift */,
+				1DDEEF4A29659B07003ACFDF /* FortuneFormView.swift */,
+				1DDEEF722965A85F003ACFDF /* FortuneViewModel.swift */,
 				1DDEEF4C29659B0B003ACFDF /* Assets.xcassets */,
 				1DDEEF4E29659B0B003ACFDF /* Preview Content */,
+				1DDEEF742965ABF5003ACFDF /* BloodType.swift */,
 			);
 			path = YumemiCodeCheck;
 			sourceTree = "<group>";
@@ -257,8 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DDEEF4B29659B07003ACFDF /* ContentView.swift in Sources */,
+				1DDEEF752965ABF5003ACFDF /* BloodType.swift in Sources */,
+				1DDEEF4B29659B07003ACFDF /* FortuneFormView.swift in Sources */,
 				1DDEEF4929659B07003ACFDF /* YumemiCodeCheckApp.swift in Sources */,
+				1DDEEF732965A85F003ACFDF /* FortuneViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
