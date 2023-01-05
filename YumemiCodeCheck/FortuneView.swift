@@ -40,9 +40,16 @@ struct FortuneView<ViewModel: FortuneViewModelProtocol>: View {
             .cornerRadius(120)
         }
         .padding()
-        .alert(isPresented: $viewModel.isInvalidInputAlertPresented) {
-            Alert(title: Text("確認"), message: Text("入力値が不正です。"), dismissButton: .default(Text("OK")))
-        }
+        .alert("確認", isPresented: $viewModel.isInvalidInputAlertPresented, actions: {
+            Button("OK") {}
+        }, message: {
+            Text("入力値が不正です。")
+        })
+        .alert("エラー", isPresented: $viewModel.isErrorAlertPresented, actions: {
+            Button("OK") {}
+        }, message: {
+            Text("エラーが発生しました。再度お試しください。")
+        })
     }
 }
 
