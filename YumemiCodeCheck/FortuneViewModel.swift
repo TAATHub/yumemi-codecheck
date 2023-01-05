@@ -23,6 +23,7 @@ final class FortuneViewModel: FortuneViewModelProtocol {
     
     func onFortuneButtonTapped() async {
         // TODO: バリデーション処理
+        // TODO: リクエスト層に切り出す
         
         do {
             guard let url = URL(string: "https://yumemi-ios-junior-engineer-codecheck.app.swift.cloud/my_fortune") else { return }

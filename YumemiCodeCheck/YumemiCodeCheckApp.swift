@@ -11,7 +11,7 @@ import SwiftUI
 struct YumemiCodeCheckApp: App {
     var body: some Scene {
         WindowGroup {
-            FortuneFormView(viewModel: FortuneViewModel())
+            FortuneView(viewModel: FortuneViewModel())
         }
     }
 }
