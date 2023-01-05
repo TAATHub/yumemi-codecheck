@@ -9,10 +9,19 @@ import Foundation
 
 @MainActor
 protocol FortuneViewModelProtocol: ObservableObject {
+    /// 名前
     var name: String { get set }
+    /// 生年月日
     var birthday: Date { get set }
+    /// 血液型
     var bloodType: BloodType { get set }
+    /// 入力値不正のアラート表示フラグ
+    var isInvalidInputAlertPresented: Bool { get set }
     
+    /// 入力値のバリデーション処理
+    /// - Returns: Bool
+    func validateInputs() -> Bool
+    /// 占うボタン押下時の処理
     func onFortuneButtonTapped() async
 }
 
@@ -20,9 +29,17 @@ final class FortuneViewModel: FortuneViewModelProtocol {
     @Published var name: String = ""
     @Published var birthday: Date = Date()
     @Published var bloodType: BloodType = .unkown
+    @Published var isInvalidInputAlertPresented: Bool = false
+    
+    func validateInputs() -> Bool {
+        return !name.isEmpty && bloodType != .unkown
+    }
     
     func onFortuneButtonTapped() async {
-        // TODO: バリデーション処理
+        guard validateInputs() else {
+            isInvalidInputAlertPresented = true
+            return
+        }
         // TODO: リクエスト層に切り出す
         
         do {

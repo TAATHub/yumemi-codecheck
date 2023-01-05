@@ -31,14 +31,18 @@ struct FortuneView<ViewModel: FortuneViewModelProtocol>: View {
                     await viewModel.onFortuneButtonTapped()
                 }
             }
+            // TODO: メインボタンのmodifierとしてextensionに定義したい
             .fontWeight(.bold)
             .padding(12)
-            .frame(width: 200)
+            .frame(width: 240)
             .foregroundColor(.white)
             .background(Color.blue)
-            .cornerRadius(8)
+            .cornerRadius(120)
         }
         .padding()
+        .alert(isPresented: $viewModel.isInvalidInputAlertPresented) {
+            Alert(title: Text("確認"), message: Text("入力値が不正です。"), dismissButton: .default(Text("OK")))
+        }
     }
 }
 

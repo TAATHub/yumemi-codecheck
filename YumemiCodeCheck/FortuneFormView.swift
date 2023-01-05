@@ -12,6 +12,7 @@ struct FortuneFormView<ViewModel: FortuneViewModelProtocol>: View {
     
     var body: some View {
         VStack {
+            // TODO: SeparatorViewとして切り出したい。カラーを引数として。
             Color.gray.frame(height: 1)
             
             HStack(spacing: 20) {
@@ -22,7 +23,6 @@ struct FortuneFormView<ViewModel: FortuneViewModelProtocol>: View {
             
             
             Color.gray.frame(height: 1)
-            // TODO: 未選択状態を検知したい
             DatePicker("生年月日", selection: $viewModel.birthday, displayedComponents: [.date])
                 .padding(.vertical, 8)
             
