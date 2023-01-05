@@ -19,7 +19,7 @@ final class FortuneRequest {
     func requestMyFortune(name: String, birthday: Date, bloodType: BloodType) async throws -> FortuneResult {   // FIXME: 返却型をResult<FortuneResult, APIError>に変更する
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue("aaa", forHTTPHeaderField: "API-Version")
+        request.setValue("v1", forHTTPHeaderField: "API-Version")
         
         // リクエストボディを作成して付与する
         if let body = requestBody(name: name, birthday: birthday, bloodType: bloodType) {
