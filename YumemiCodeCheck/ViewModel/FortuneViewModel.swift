@@ -15,6 +15,8 @@ protocol FortuneViewModelProtocol: ObservableObject {
     var birthday: Date { get set }
     /// 血液型
     var bloodType: BloodType { get set }
+    /// ローディング中かどうか
+    var isLoading: Bool { get set }
     /// 入力値不正のアラート表示フラグ
     var isInvalidInputAlertPresented: Bool { get set }
     /// エラーアラートの表示フラグ
@@ -33,6 +35,7 @@ final class FortuneViewModel: FortuneViewModelProtocol {
     @Published var name: String = ""
     @Published var birthday: Date = Date()
     @Published var bloodType: BloodType = .unkown
+    @Published var isLoading: Bool = false
     @Published var isInvalidInputAlertPresented: Bool = false
     @Published var isErrorAlertPresented: Bool = false
     
@@ -47,7 +50,12 @@ final class FortuneViewModel: FortuneViewModelProtocol {
         }
         
         do {
+            defer { isLoading = false }
+            isLoading = true
+            
+            // TODO: resultが返却されたら画面遷移して表示する
             let result: FortuneResult = try await request.requestMyFortune(name: name, birthday: birthday, bloodType: bloodType)
+            
         } catch {
             isErrorAlertPresented = true
         }

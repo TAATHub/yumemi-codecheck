@@ -10,7 +10,13 @@ import Foundation
 final class FortuneRequest {
     private let url: URL = .init(string: "https://yumemi-ios-junior-engineer-codecheck.app.swift.cloud/my_fortune")!
     
-    func requestMyFortune(name: String, birthday: Date, bloodType: BloodType) async throws -> FortuneResult {
+    /// 都道府県占いのリクエストを行う
+    /// - Parameters:
+    ///   - name: 名前
+    ///   - birthday: 生年月日
+    ///   - bloodType: 血液型
+    /// - Returns: 占い結果
+    func requestMyFortune(name: String, birthday: Date, bloodType: BloodType) async throws -> FortuneResult {   // FIXME: 返却型をResult<FortuneResult, APIError>に変更する
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("aaa", forHTTPHeaderField: "API-Version")
@@ -19,8 +25,6 @@ final class FortuneRequest {
         if let body = requestBody(name: name, birthday: birthday, bloodType: bloodType) {
             request.httpBody = body
         }
-        
-        // TODO: ローディング表示
         
         do {
             let (data, urlResponse) = try await URLSession.shared.data(for: request)
