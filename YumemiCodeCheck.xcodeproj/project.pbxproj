@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D8607462966A92C00A2BD74 /* FortuneFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8607452966A92C00A2BD74 /* FortuneFormView.swift */; };
+		1D8607482966AFD700A2BD74 /* FortuneRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8607472966AFD700A2BD74 /* FortuneRequest.swift */; };
 		1DDEEF4929659B07003ACFDF /* YumemiCodeCheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEEF4829659B07003ACFDF /* YumemiCodeCheckApp.swift */; };
 		1DDEEF4B29659B07003ACFDF /* FortuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEEF4A29659B07003ACFDF /* FortuneView.swift */; };
 		1DDEEF4D29659B0B003ACFDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DDEEF4C29659B0B003ACFDF /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		1D8607452966A92C00A2BD74 /* FortuneFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneFormView.swift; sourceTree = "<group>"; };
+		1D8607472966AFD700A2BD74 /* FortuneRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneRequest.swift; sourceTree = "<group>"; };
 		1DDEEF4529659B07003ACFDF /* YumemiCodeCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YumemiCodeCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DDEEF4829659B07003ACFDF /* YumemiCodeCheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YumemiCodeCheckApp.swift; sourceTree = "<group>"; };
 		1DDEEF4A29659B07003ACFDF /* FortuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneView.swift; sourceTree = "<group>"; };
@@ -106,10 +108,11 @@
 				1DDEEF4A29659B07003ACFDF /* FortuneView.swift */,
 				1D8607452966A92C00A2BD74 /* FortuneFormView.swift */,
 				1DDEEF722965A85F003ACFDF /* FortuneViewModel.swift */,
-				1DDEEF4C29659B0B003ACFDF /* Assets.xcassets */,
-				1DDEEF4E29659B0B003ACFDF /* Preview Content */,
+				1D8607472966AFD700A2BD74 /* FortuneRequest.swift */,
 				1DDEEF742965ABF5003ACFDF /* BloodType.swift */,
 				1DDEEF762965B6D1003ACFDF /* Fortune.swift */,
+				1DDEEF4C29659B0B003ACFDF /* Assets.xcassets */,
+				1DDEEF4E29659B0B003ACFDF /* Preview Content */,
 			);
 			path = YumemiCodeCheck;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				1DDEEF752965ABF5003ACFDF /* BloodType.swift in Sources */,
 				1DDEEF772965B6D1003ACFDF /* Fortune.swift in Sources */,
 				1DDEEF4B29659B07003ACFDF /* FortuneView.swift in Sources */,
+				1D8607482966AFD700A2BD74 /* FortuneRequest.swift in Sources */,
 				1DDEEF4929659B07003ACFDF /* YumemiCodeCheckApp.swift in Sources */,
 				1DDEEF732965A85F003ACFDF /* FortuneViewModel.swift in Sources */,
 			);

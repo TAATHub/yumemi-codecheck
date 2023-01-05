@@ -26,6 +26,8 @@ protocol FortuneViewModelProtocol: ObservableObject {
 }
 
 final class FortuneViewModel: FortuneViewModelProtocol {
+    var request: FortuneRequest = .init()
+    
     @Published var name: String = ""
     @Published var birthday: Date = Date()
     @Published var bloodType: BloodType = .unkown
@@ -40,42 +42,13 @@ final class FortuneViewModel: FortuneViewModelProtocol {
             isInvalidInputAlertPresented = true
             return
         }
-        // TODO: リクエスト層に切り出す
         
         do {
-            guard let url = URL(string: "https://yumemi-ios-junior-engineer-codecheck.app.swift.cloud/my_fortune") else { return }
-            
-            var request = URLRequest(url: url)
-            request.httpMethod = "POST"
-            request.setValue("v1", forHTTPHeaderField: "API-Version")
-            
-            if let body = requestBody(name: name, birthday: birthday, bloodType: bloodType) {
-                request.httpBody = body
-            }
-            
-            // TODO: ローディング表示
-            let (data, urlResponse) = try await URLSession.shared.data(for: request)
-            // TODO: レスポンスステータスに応じてもエラー表示
-            let result: FortuneResult = try JSONDecoder().decode(FortuneResult.self, from: data)
+            let result: FortuneResult = try await request.requestMyFortune(name: name, birthday: birthday, bloodType: bloodType)
             print(result)
         } catch let error {
             // TODO: エラー表示
             print(error)
         }
-    }
-    
-    func requestBody(name: String, birthday: Date, bloodType: BloodType) -> Data? {
-        let birthdayDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: birthday)
-        let todayDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())
-        
-        let fortune: Fortune = .init(name: name,
-                                     birthday: Day(year: birthdayDateComponents.year!,
-                                                   month: birthdayDateComponents.month!,
-                                                   day: birthdayDateComponents.day!),
-                                     blood_type: bloodType.rawValue,
-                                     today: Day(year: todayDateComponents.year!,
-                                                month: todayDateComponents.month!,
-                                                day: todayDateComponents.day!))
-        return try? JSONEncoder().encode(fortune)
     }
 }
