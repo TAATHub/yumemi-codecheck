@@ -49,15 +49,18 @@ final class FortuneViewModel: FortuneViewModelProtocol {
             return
         }
         
-        do {
-            defer { isLoading = false }
-            isLoading = true
+        isLoading = true
             
-            // TODO: resultが返却されたら画面遷移して表示する
-            let result: FortuneResult = try await request.requestMyFortune(name: name, birthday: birthday, bloodType: bloodType)
-            
-        } catch {
+        // TODO: resultが返却されたら画面遷移して表示する
+        let result: Result<FortuneResult, APIError> = await request.requestMyFortune(name: name, birthday: birthday, bloodType: bloodType)
+        switch result {
+        case .success(let fortuneResutl):
+            // 画面遷移
+            break
+        case .failure:
             isErrorAlertPresented = true
         }
+            
+        isLoading = false
     }
 }

@@ -16,7 +16,7 @@ final class FortuneRequest {
     ///   - birthday: 生年月日
     ///   - bloodType: 血液型
     /// - Returns: 占い結果
-    func requestMyFortune(name: String, birthday: Date, bloodType: BloodType) async throws -> FortuneResult {   // FIXME: 返却型をResult<FortuneResult, APIError>に変更する
+    func requestMyFortune(name: String, birthday: Date, bloodType: BloodType) async -> Result<FortuneResult, APIError> {   // FIXME: 返却型をResult<FortuneResult, APIError>に変更する
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("v1", forHTTPHeaderField: "API-Version")
@@ -29,9 +29,11 @@ final class FortuneRequest {
         do {
             let (data, urlResponse) = try await URLSession.shared.data(for: request)
             
+            return .failure(.responseError)
+            
             // HTTPステータスを取得できない場合は、レスポンスエラー
             guard let httpStatus = urlResponse as? HTTPURLResponse else {
-                throw APIError.responseError
+                return .failure(APIError.responseError)
             }
             
             switch httpStatus.statusCode {
@@ -39,19 +41,19 @@ final class FortuneRequest {
                 // 200,300台の場合は、デコードを行う
                 guard let result: FortuneResult = try? JSONDecoder().decode(FortuneResult.self, from: data) else {
                     // デコード失敗の場合は、データなしエラー
-                    throw APIError.noData
+                    return .failure(APIError.noData)
                 }
-                return result
+                return .success(result)
             case 400... :
                 // 400台の場合は、Badステータスエラー
-                throw APIError.badStatus(statusCode: httpStatus.statusCode)
+                return .failure(APIError.badStatus(statusCode: httpStatus.statusCode))
             default:
                 fatalError()
                 break
             }
         } catch {
             // それ以外の場合は、サーバーエラー
-            throw APIError.serverError(error)
+            return .failure(APIError.serverError(error))
         }
     }
     
