@@ -20,7 +20,7 @@ struct Day: Codable {
     var day: Int
 }
 
-struct FortuneResult: Codable {
+struct FortuneResult: Codable, Hashable {
     var name: String
     var capital: String
     var brief: String

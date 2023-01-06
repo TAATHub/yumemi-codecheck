@@ -21,6 +21,8 @@ protocol FortuneViewModelProtocol: ObservableObject {
     var isInvalidInputAlertPresented: Bool { get set }
     /// エラーアラートの表示フラグ
     var isErrorAlertPresented: Bool { get set }
+    /// ナビゲーションパス
+    var navigationPath: [NavigationPath] { get set }
     
     /// 入力値のバリデーション処理
     /// - Returns: Bool
@@ -28,6 +30,8 @@ protocol FortuneViewModelProtocol: ObservableObject {
     /// 占うボタン押下時の処理
     func onFortuneButtonTapped() async
 }
+
+
 
 final class FortuneViewModel: FortuneViewModelProtocol {
     var request: FortuneRequest = .init()
@@ -37,7 +41,8 @@ final class FortuneViewModel: FortuneViewModelProtocol {
     @Published var bloodType: BloodType = .unkown
     @Published var isLoading: Bool = false
     @Published var isInvalidInputAlertPresented: Bool = false
-    @Published var isErrorAlertPresented: Bool = false
+    @Published var isErrorAlertPresented: Bool = false    
+    @Published var navigationPath: [NavigationPath] = []
     
     func validateInputs() -> Bool {
         return !name.isEmpty && bloodType != .unkown
@@ -53,9 +58,8 @@ final class FortuneViewModel: FortuneViewModelProtocol {
             defer { isLoading = false }
             isLoading = true
             
-            // TODO: resultが返却されたら画面遷移して表示する
             let result: FortuneResult = try await request.requestMyFortune(name: name, birthday: birthday, bloodType: bloodType)
-            
+            navigationPath.append(.fortuneDetail(fortuneResult: result))
         } catch {
             isErrorAlertPresented = true
         }
