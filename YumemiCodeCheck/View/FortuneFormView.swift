@@ -7,26 +7,48 @@
 
 import SwiftUI
 
+struct Separator: View {
+    enum SeparatorType {
+        case vertical, horizontal
+    }
+    
+    var type: SeparatorType = .horizontal
+    var color: Color = .black
+    var size: CGFloat = 0.5
+    
+    var body: some View {
+        switch type {
+        case .vertical:
+            color.frame(width: size)
+        case .horizontal:
+            color.frame(height: size)
+        }
+    }
+}
+
 struct FortuneFormView<ViewModel: FortuneViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         VStack {
-            // TODO: SeparatorViewとして切り出したい。カラーを引数として。
-            Color.gray.frame(height: 1)
+            Separator(color: .gray)
             
+            // 名前
             HStack(spacing: 20) {
                 Text("名前")
                 TextField("名前を入力", text: $viewModel.name)
             }
             .padding(.vertical, 8)
             
+            Separator(color: .gray)
             
-            Color.gray.frame(height: 1)
+            // 生年月日
             DatePicker("生年月日", selection: $viewModel.birthday, displayedComponents: [.date])
                 .padding(.vertical, 8)
             
-            Color.gray.frame(height: 1)
+            Separator(color: .gray)
+
+            // 血液型
             HStack(spacing: 20) {
                 Text("血液型")
                 Spacer()
@@ -38,7 +60,8 @@ struct FortuneFormView<ViewModel: FortuneViewModelProtocol>: View {
                     Text("\(BloodType.ab.typeText())型").tag(BloodType.ab)
                 }
             }
-            Color.gray.frame(height: 1)
+            
+            Separator(color: .gray)
         }
     }
 }
