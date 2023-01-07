@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D45EA1B2969ACF800347016 /* GrowingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45EA1A2969ACF800347016 /* GrowingButton.swift */; };
 		1D8607462966A92C00A2BD74 /* FortuneFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8607452966A92C00A2BD74 /* FortuneFormView.swift */; };
 		1D8607482966AFD700A2BD74 /* FortuneRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8607472966AFD700A2BD74 /* FortuneRequest.swift */; };
 		1D86074A2966B66E00A2BD74 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8607492966B66E00A2BD74 /* APIError.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D45EA1A2969ACF800347016 /* GrowingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowingButton.swift; sourceTree = "<group>"; };
 		1D8607452966A92C00A2BD74 /* FortuneFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneFormView.swift; sourceTree = "<group>"; };
 		1D8607472966AFD700A2BD74 /* FortuneRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneRequest.swift; sourceTree = "<group>"; };
 		1D8607492966B66E00A2BD74 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				1DDEEF4A29659B07003ACFDF /* FortuneView.swift */,
 				1D8607452966A92C00A2BD74 /* FortuneFormView.swift */,
 				1D8607522968541600A2BD74 /* FortuneDetailView.swift */,
+				1D45EA1A2969ACF800347016 /* GrowingButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			files = (
 				1D8607462966A92C00A2BD74 /* FortuneFormView.swift in Sources */,
 				1DDEEF752965ABF5003ACFDF /* BloodType.swift in Sources */,
+				1D45EA1B2969ACF800347016 /* GrowingButton.swift in Sources */,
 				1D86074C29670B4000A2BD74 /* CustomProgressView.swift in Sources */,
 				1D8607552968733200A2BD74 /* NavigationPath.swift in Sources */,
 				1D8607532968541600A2BD74 /* FortuneDetailView.swift in Sources */,

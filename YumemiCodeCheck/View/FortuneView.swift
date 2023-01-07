@@ -34,13 +34,7 @@ struct FortuneView<ViewModel: FortuneViewModelProtocol>: View {
                             await viewModel.onFortuneButtonTapped()
                         }
                     }
-                    // TODO: メインボタンのmodifierとしてextensionに定義したい
-                    .fontWeight(.bold)
-                    .padding(12)
-                    .frame(width: 240)
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .cornerRadius(120)
+                    .buttonStyle(GrowingButton(width: 240))
                 }
                 .padding()
                 // 同一階層に定義した複数のアラートが表示されない問題は、iOS 15から使えるalert(_:isPresented:actions:message:)で解決できる
