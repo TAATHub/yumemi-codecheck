@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D45EA192969ACB600347016 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45EA182969ACB600347016 /* View+Extension.swift */; };
 		1D45EA1B2969ACF800347016 /* GrowingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D45EA1A2969ACF800347016 /* GrowingButton.swift */; };
 		1D8607462966A92C00A2BD74 /* FortuneFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8607452966A92C00A2BD74 /* FortuneFormView.swift */; };
 		1D8607482966AFD700A2BD74 /* FortuneRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8607472966AFD700A2BD74 /* FortuneRequest.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D45EA182969ACB600347016 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		1D45EA1A2969ACF800347016 /* GrowingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrowingButton.swift; sourceTree = "<group>"; };
 		1D8607452966A92C00A2BD74 /* FortuneFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneFormView.swift; sourceTree = "<group>"; };
 		1D8607472966AFD700A2BD74 /* FortuneRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FortuneRequest.swift; sourceTree = "<group>"; };
@@ -91,6 +93,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D45EA172969AC8900347016 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				1D45EA182969ACB600347016 /* View+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		1D86074D29670B8B00A2BD74 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				1D86075029670BD500A2BD74 /* Enum */,
+				1D45EA172969AC8900347016 /* Extension */,
 				1D86074F29670BCA00A2BD74 /* Data */,
 				1D86074D29670B8B00A2BD74 /* View */,
 				1D86074E29670BA200A2BD74 /* ViewModel */,
@@ -335,6 +346,7 @@
 				1D8607532968541600A2BD74 /* FortuneDetailView.swift in Sources */,
 				1DDEEF772965B6D1003ACFDF /* Fortune.swift in Sources */,
 				1DDEEF4B29659B07003ACFDF /* FortuneView.swift in Sources */,
+				1D45EA192969ACB600347016 /* View+Extension.swift in Sources */,
 				1D8607482966AFD700A2BD74 /* FortuneRequest.swift in Sources */,
 				1D86074A2966B66E00A2BD74 /* APIError.swift in Sources */,
 				1DDEEF4929659B07003ACFDF /* YumemiCodeCheckApp.swift in Sources */,
