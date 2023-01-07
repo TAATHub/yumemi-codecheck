@@ -7,31 +7,12 @@
 
 import SwiftUI
 
-struct Separator: View {
-    enum SeparatorType {
-        case vertical, horizontal
-    }
-    
-    var type: SeparatorType = .horizontal
-    var color: Color = .black
-    var size: CGFloat = 0.5
-    
-    var body: some View {
-        switch type {
-        case .vertical:
-            color.frame(width: size)
-        case .horizontal:
-            color.frame(height: size)
-        }
-    }
-}
-
 struct FortuneFormView<ViewModel: FortuneViewModelProtocol>: View {
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         VStack {
-            Separator(color: .gray)
+            Divider().overlay(.gray)
             
             // 名前
             HStack(spacing: 20) {
@@ -40,13 +21,13 @@ struct FortuneFormView<ViewModel: FortuneViewModelProtocol>: View {
             }
             .padding(.vertical, 8)
             
-            Separator(color: .gray)
+            Divider().overlay(.gray)
             
             // 生年月日
             DatePicker("生年月日", selection: $viewModel.birthday, displayedComponents: [.date])
                 .padding(.vertical, 8)
             
-            Separator(color: .gray)
+            Divider().overlay(.gray)
 
             // 血液型
             HStack(spacing: 20) {
@@ -61,7 +42,7 @@ struct FortuneFormView<ViewModel: FortuneViewModelProtocol>: View {
                 }
             }
             
-            Separator(color: .gray)
+            Divider().overlay(.gray)
         }
     }
 }
